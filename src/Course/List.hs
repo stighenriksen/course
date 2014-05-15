@@ -100,8 +100,8 @@ product list = foldLeft (\p i -> p * i) 1 list
 sum ::
   List Int
   -> Int
-sum =
-  error "todo"
+sum list = foldLeft (\s i -> s + i) 0 list
+
 
 -- | Return the length of the list.
 --
