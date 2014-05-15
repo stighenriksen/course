@@ -142,8 +142,7 @@ filter ::
   (a -> Bool)
   -> List a
   -> List a
-filter =
-  error "todo"
+filter p = foldLeft (\b a -> if (p a) then a :. b else b) Nil
 
 -- | Append two lists to a new list.
 --
