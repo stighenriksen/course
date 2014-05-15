@@ -126,7 +126,7 @@ map ::
   -> List a
   -> List b
 map f list =
-  foldLeft (\b a -> f a :. b) Nil list
+  foldRight (\a b -> f a :. b) Nil list
 
 -- | Return elements satisfying the given predicate.
 --
@@ -142,7 +142,7 @@ filter ::
   (a -> Bool)
   -> List a
   -> List a
-filter p = foldLeft (\b a -> if (p a) then a :. b else b) Nil
+filter p = foldRight (\a b -> if (p a) then a :. b else b) Nil
 
 -- | Append two lists to a new list.
 --
@@ -160,8 +160,9 @@ filter p = foldLeft (\b a -> if (p a) then a :. b else b) Nil
   List a
   -> List a
   -> List a
-(++) =
-  error "todo"
+(++) l Nil = l
+(++) Nil l = l
+(++) (h1 :. t1) l2  = h1 :. (++) t1 l2
 
 infixr 5 ++
 
