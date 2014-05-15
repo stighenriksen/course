@@ -86,8 +86,7 @@ headOr _ (b :. _) = b
 product ::
   List Int
   -> Int
-product =
-  error "todo"
+product list = foldLeft (\p i -> p * i) 1 list
 
 -- | Sum the elements of the list.
 --
