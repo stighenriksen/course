@@ -125,8 +125,8 @@ map ::
   (a -> b)
   -> List a
   -> List b
-map =
-  error "todo"
+map f list =
+  foldLeft (\b a -> f a :. b) Nil list
 
 -- | Return elements satisfying the given predicate.
 --
