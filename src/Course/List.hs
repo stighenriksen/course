@@ -102,7 +102,6 @@ sum ::
   -> Int
 sum list = foldLeft (\s i -> s + i) 0 list
 
-
 -- | Return the length of the list.
 --
 -- >>> length (1 :. 2 :. 3 :. Nil)
@@ -112,8 +111,7 @@ sum list = foldLeft (\s i -> s + i) 0 list
 length ::
   List a
   -> Int
-length =
-  error "todo"
+length list = foldLeft (\l _ -> l + 1) 0 list
 
 -- | Map the given function on each element of the list.
 --
