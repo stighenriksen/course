@@ -31,6 +31,7 @@ import qualified Numeric as N
 data List t =
   Nil
   | t :. List t
+
   deriving (Eq, Ord)
 
 -- Right-associative
@@ -72,8 +73,8 @@ headOr ::
   a
   -> List a
   -> a
-headOr =
-  error "todo"
+headOr a Nil = a
+headOr _ (b :. _) = b
 
 -- | The product of the elements of a list.
 --
