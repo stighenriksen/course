@@ -18,7 +18,6 @@ import qualified System.Environment as E
 import qualified Prelude as P
 import qualified Numeric as N
 
-
 -- $setup
 -- >>> import Test.QuickCheck
 -- >>> import Course.Core(even, id, const)
@@ -222,8 +221,7 @@ flatMap f =  flatten . map f
 seqOptional ::
   List (Optional a)
   -> Optional (List a)
-seqOptional =
-  error "todo"
+seqOptional l = foldRight (twiceOptional (:.)) (Full Nil) l
 
 -- | Find the first element in the list matching the predicate.
 --
