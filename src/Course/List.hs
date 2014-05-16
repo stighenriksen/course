@@ -243,8 +243,10 @@ find ::
   (a -> Bool)
   -> List a
   -> Optional a
-find =
-  error "todo"
+find f (h :. t)
+  | f h = Full h
+  | otherwise = find f t
+find _ Nil = Empty                 
 
 -- | Determine if the length of the given list is greater than 4.
 --
