@@ -123,8 +123,8 @@ map ::
   (a -> b)
   -> List a
   -> List b
-map f list =
-  foldRight (\a b -> f a :. b) Nil list
+map f =
+  foldRight (\a b -> f a :. b) Nil
 
 -- | Return elements satisfying the given predicate.
 --
