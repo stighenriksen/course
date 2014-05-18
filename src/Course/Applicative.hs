@@ -43,8 +43,7 @@ f <$> a = pure f <*> a
 --
 -- prop> pure x == Id x
 instance Applicative Id where
-  pure =
-    error "todo"
+  pure = Id
 
 -- | Insert into a List.
 --
