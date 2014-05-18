@@ -204,8 +204,7 @@ lift4 f a b c d = lift3 f a b c <*> d
   f b
   -> f a
   -> f b
-(<*) =
-  error "todo"
+(<*) = lift2 const
 
 -----------------------
 -- SUPPORT LIBRARIES --
