@@ -140,7 +140,7 @@ filter ::
   (a -> Bool)
   -> List a
   -> List a
-filter p = foldRight (\a b -> if (p a) then a :. b else b) Nil
+filter p = foldRight (\a -> if (p a) then (a :.) else id) Nil
 
 -- | Append two lists to a new list.
 --
