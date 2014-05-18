@@ -37,9 +37,8 @@ class Apply f => Applicative f where
   (a -> b)
   -> f a
   -> f b
-(<$>) =
-  error "todo"
-
+f <$> a = pure f <*> a
+  
 -- | Insert into Id.
 --
 -- prop> pure x == Id x
