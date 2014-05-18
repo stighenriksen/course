@@ -24,16 +24,14 @@ infixl 4 <*>
 -- >>> Id (+10) <*> Id 8
 -- Id 18
 instance Apply Id where
-  (<*>) =
-    error "todo"
+  Id f <*> Id a = Id (f a)
 
 -- | Implement @Apply@ instance for @List@.
 --
 -- >>> (+1) :. (*2) :. Nil <*> 1 :. 2 :. 3 :. Nil
 -- [2,3,4,2,4,6]
 instance Apply List where
-  (<*>) =
-    error "todo"
+  (<*>) f a = flatMap (`map` a) f
 
 -- | Implement @Apply@ instance for @Optional@.
 --
