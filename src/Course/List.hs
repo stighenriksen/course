@@ -98,7 +98,7 @@ product = foldLeft (*) 1
 sum ::
   List Int
   -> Int
-sum list = foldLeft (\s i -> s + i) 0 list
+sum = foldLeft (+) 0
 
 -- | Return the length of the list.
 --
