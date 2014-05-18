@@ -73,7 +73,7 @@ instance Apply ((->) t) where
 -- >>> lift2 (+) (1 :. 2 :. 3 :. Nil) (4 :. 5 :. Nil)
 -- [5,6,6,7,7,8]
 --
--- >>> Full (+) (lift2 7) (Full 8)
+-- >>>  lift2 (+) (Full 7) (Full 8)
 -- Full 15
 --
 -- >>> lift2 (+) (Full 7) Empty

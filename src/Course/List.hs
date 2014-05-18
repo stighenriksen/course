@@ -295,12 +295,7 @@ produce f a = a :. (produce f $ f a)
 -- | Do anything other than reverse a list.
 -- Is it even possible?
 --
--- >>> notReverse Nil
--- []
 --
--- prop> let types = x :: List Int in notReverse x ++ notReverse y == notReverse (y ++ x)
---
--- prop> let types = x :: Int in notReverse (x :. Nil) == x :. Nil
 notReverse ::
   List a
   -> List a
