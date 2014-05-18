@@ -44,8 +44,7 @@ instance Apply List where
 -- >>> Full (+8) <*> Empty
 -- Empty
 instance Apply Optional where
-    Full f <*> Full a = Full $ f a
-    _ <*> _ = Empty
+  f <*> a = bindOptional (`mapOptional` a) f
 
 -- | Implement @Apply@ instance for reader.
 --
