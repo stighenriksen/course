@@ -122,8 +122,7 @@ lift3 ::
   -> f b
   -> f c
   -> f d
-lift3 =
-  error "todo"
+lift3 f a b c = f <$> a <*> b <*> c
 
 -- | Apply a quaternary function in the environment.
 --
@@ -155,8 +154,7 @@ lift4 ::
   -> f c
   -> f d
   -> f e
-lift4 =
-  error "todo"
+lift4 f a b c d = f <$> a <*> b <*> c <*> d
 
 -- | Sequence, discarding the value of the first argument.
 -- Pronounced, right apply.
