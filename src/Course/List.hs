@@ -72,8 +72,7 @@ headOr ::
   a
   -> List a
   -> a
-headOr a Nil = a
-headOr _ (b :. _) = b
+headOr = foldRight const
 
 -- | The product of the elements of a list.
 --
