@@ -179,8 +179,7 @@ lift4 f a b c d = lift3 f a b c <*> d
   f a
   -> f b
   -> f b
-(*>) =
-  error "todo"
+(*>) = lift2 (const id)
 
 -- | Sequence, discarding the value of the second argument.
 -- Pronounced, left apply.
