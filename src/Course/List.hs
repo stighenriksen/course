@@ -218,7 +218,7 @@ flatMap f =  flatten . map f
 seqOptional ::
   List (Optional a)
   -> Optional (List a)
-seqOptional l = foldRight (twiceOptional (:.)) (Full Nil) l
+seqOptional = foldRight (twiceOptional (:.)) (Full Nil) 
 
 -- | Find the first element in the list matching the predicate.
 --
