@@ -158,9 +158,7 @@ filter p = foldRight (\a -> if (p a) then (a :.) else id) Nil
   List a
   -> List a
   -> List a
-(++) l Nil = l
-(++) Nil l = l
-(++) (h1 :. t1) l2  = h1 :. (++) t1 l2
+(++) = flip $ foldRight (:.)
 
 infixr 5 ++
 
