@@ -89,7 +89,7 @@ void ::
   Functor f =>
   f a
   -> f ()
-void a = const () <$> a
+void = (<$) ()
 -----------------------
 -- SUPPORT LIBRARIES --
 -----------------------
