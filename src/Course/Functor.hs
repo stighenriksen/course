@@ -28,8 +28,7 @@ infixl 4 <$>
 -- >>> (+1) <$> Id 2
 -- Id 3
 instance Functor Id where
-  (<$>) =
-    error "todo"
+  (<$>) = mapId
 
 -- | Maps a function on the List functor.
 --
