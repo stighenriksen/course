@@ -84,7 +84,7 @@ headOr = foldRight const
 product ::
   List Int
   -> Int
-product list = foldLeft (\p i -> p * i) 1 list
+product = foldLeft (*) 1
 
 -- | Sum the elements of the list.
 --
