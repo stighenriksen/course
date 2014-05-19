@@ -83,7 +83,7 @@ sequence ::
   Applicative f =>
   List (f a)
   -> f (List a)
-sequence = foldRight (lift2 (:.)) (pure Nil)
+sequence = foldRight ((lift2 (:.))) (pure Nil)
 
 -- | Replicate an effect a given number of times.
 --
