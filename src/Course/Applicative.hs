@@ -128,9 +128,8 @@ filtering ::
   Applicative f =>
   (a -> f Bool)
   -> List a
-  -> f (List a)
-filtering =
-  error "todo"
+  -> f (List a)                         
+filtering p l = foldRight (\a -> lift2 (\b -> if b then (a :. ) else (id)) (p a)) (pure Nil) l
 
 -----------------------
 -- SUPPORT LIBRARIES --
