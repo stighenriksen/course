@@ -106,8 +106,8 @@ replicateA ::
   Int
   -> f a
   -> f (List a)
-replicateA =
-  error "todo"
+replicateA 0 _ = pure Nil
+replicateA num a = (lift2 (:.)) a (replicateA (num - 1) a)
 
 -- | Filter a list with a predicate that produces an effect.
 --
